@@ -1,0 +1,6 @@
+{
+  "name": "NekNetwork",
+  "description": "Un social network fan-made dedicato al cantautore italiano Nek (Filippo Neviani).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
