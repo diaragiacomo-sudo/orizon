@@ -84,10 +84,10 @@ export function Pages() {
               <p className="text-xs font-semibold text-slate-500 mb-4">{page.category} &middot; {page.followers} follower</p>
               
               <div className="mt-auto pt-4 border-t border-slate-100 flex gap-2">
-                <button className="flex-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 font-bold py-2 rounded-xl transition-colors text-sm">
+                <button className="flex-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 font-bold py-2 rounded-xl transition-colors text-sm" onClick={() => alert('Segui ora questa pagina!')}>
                   Segui
                 </button>
-                <button className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-2 rounded-xl transition-colors text-sm">
+                <button className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-2 rounded-xl transition-colors text-sm" onClick={() => alert('Visita la pagina!')}>
                   Visita
                 </button>
               </div>

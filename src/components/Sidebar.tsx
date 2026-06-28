@@ -1,4 +1,4 @@
-import { Home, User, MessageSquare, Bell, Video, Gamepad2, Users, LayoutList, Settings, Flame, HelpCircle } from 'lucide-react';
+import { Home, User, MessageSquare, Bell, Video, Gamepad2, Users, LayoutList, Settings, Flame, HelpCircle, Book } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 interface SidebarProps {
@@ -10,6 +10,7 @@ export function Sidebar({ currentTab, onTabChange }: SidebarProps) {
   const menuItems = [
     { id: 'home', icon: Home, label: 'Feed' },
     { id: 'profile', icon: User, label: 'Profilo' },
+    { id: 'diary', icon: Book, label: 'Il mio Diario' },
     { id: 'messages', icon: MessageSquare, label: 'Messaggi' },
     { id: 'notifications', icon: Bell, label: 'Notifiche' },
     { id: 'videos', icon: Video, label: 'Video & Reels' },

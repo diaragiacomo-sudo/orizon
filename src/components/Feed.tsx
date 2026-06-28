@@ -4,7 +4,11 @@ import { PostForm } from './PostForm';
 import { initialPosts, currentUser } from '../data';
 import { Post } from '../types';
 
-export function Feed() {
+interface FeedProps {
+  onNavigate?: (tab: string) => void;
+}
+
+export function Feed({ onNavigate }: FeedProps) {
   const [posts, setPosts] = useState<Post[]>(() => {
     const saved = localStorage.getItem('orizon_posts');
     if (saved) {
@@ -39,7 +43,7 @@ export function Feed() {
       <PostForm onPost={handleNewPost} />
       <div className="space-y-6 w-full flex flex-col items-center">
         {posts.map(post => (
-          <PostCard key={post.id} post={post} />
+          <PostCard key={post.id} post={post} onNavigate={onNavigate} />
         ))}
       </div>
     </div>

@@ -19,7 +19,7 @@ export function Games() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {games.map(game => (
-          <div key={game.id} className="bg-white border border-slate-200 rounded-3xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-md transition-all">
+          <div key={game.id} className="bg-white border border-slate-200 rounded-3xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-md transition-all" onClick={() => alert(`Avvio di ${game.title}...`)}>
             <div className="h-32 bg-slate-100 relative overflow-hidden">
               <img src={game.cover} alt={game.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

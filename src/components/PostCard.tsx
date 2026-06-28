@@ -1,7 +1,12 @@
 import { Heart, MessageCircle, Share2, MoreHorizontal } from 'lucide-react';
 import { Post } from '../types';
 
-export function PostCard({ post }: { post: Post }) {
+interface PostCardProps {
+  post: Post;
+  onNavigate?: (tab: string) => void;
+}
+
+export function PostCard({ post, onNavigate }: PostCardProps) {
   const timeAgo = (dateStr: string) => {
     const diff = Date.now() - new Date(dateStr).getTime();
     const minutes = Math.floor(diff / 60000);
@@ -15,11 +20,11 @@ export function PostCard({ post }: { post: Post }) {
     <div className="w-full max-w-[580px] bg-white rounded-3xl overflow-hidden p-5 shadow-sm border border-slate-200">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-3">
-          <img src={post.author.avatar} alt={post.author.name} className="w-10 h-10 rounded-full bg-slate-100" />
+        <div className="flex items-center gap-3 cursor-pointer group" onClick={() => onNavigate?.('profile')} role="button">
+          <img src={post.author.avatar} alt={post.author.name} className="w-10 h-10 rounded-full bg-slate-100 group-hover:opacity-90 transition-opacity" />
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="font-bold text-slate-900 text-sm">{post.author.name}</h3>
+              <h3 className="font-bold text-slate-900 text-sm group-hover:text-indigo-600 transition-colors">{post.author.name}</h3>
               {post.author.badges?.includes('Ufficiale') && (
                 <span className="bg-indigo-50 text-indigo-600 text-[10px] px-1.5 py-0.5 rounded-sm font-bold uppercase tracking-wider">
                   Ufficiale

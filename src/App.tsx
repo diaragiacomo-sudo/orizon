@@ -4,7 +4,7 @@
  */
 
 import { useState } from 'react';
-import { Home, User, Video, Flame, HelpCircle } from 'lucide-react';
+import { Home, User, Video, Flame, HelpCircle, Book } from 'lucide-react';
 import { Sidebar } from './components/Sidebar';
 import { RightSidebar } from './components/RightSidebar';
 import { Feed } from './components/Feed';
@@ -15,6 +15,7 @@ import { Support } from './components/Support';
 import { Games } from './components/Games';
 import { Groups } from './components/Groups';
 import { Pages } from './components/Pages';
+import { Diary } from './components/Diary';
 import { cn } from './lib/utils';
 
 export default function App() {
@@ -23,9 +24,11 @@ export default function App() {
   const renderContent = () => {
     switch (currentTab) {
       case 'home':
-        return <Feed />;
+        return <Feed onNavigate={setCurrentTab} />;
       case 'profile':
-        return <Profile />;
+        return <Profile onNavigate={setCurrentTab} />;
+      case 'diary':
+        return <Diary />;
       case 'quiz':
         return <Quiz />;
       case 'videos':
@@ -65,7 +68,7 @@ export default function App() {
         {renderContent()}
       </main>
 
-      <RightSidebar />
+      <RightSidebar onNavigate={setCurrentTab} />
 
       {/* Mobile Bottom Navigation */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 pb-safe z-50">

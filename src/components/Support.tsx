@@ -21,12 +21,12 @@ export function Support() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="p-4 border-2 border-slate-100 rounded-2xl hover:border-indigo-500 hover:shadow-sm cursor-pointer transition-all group">
+          <div className="p-4 border-2 border-slate-100 rounded-2xl hover:border-indigo-500 hover:shadow-sm cursor-pointer transition-all group" onClick={() => alert('Apertura sezione FAQ...')}>
             <FileText className="text-slate-400 group-hover:text-indigo-600 mb-3" size={24} />
             <h3 className="font-bold text-slate-900 mb-1">FAQ</h3>
             <p className="text-xs text-slate-500">Domande frequenti degli utenti</p>
           </div>
-          <div className="p-4 border-2 border-slate-100 rounded-2xl hover:border-indigo-500 hover:shadow-sm cursor-pointer transition-all group">
+          <div className="p-4 border-2 border-slate-100 rounded-2xl hover:border-indigo-500 hover:shadow-sm cursor-pointer transition-all group" onClick={() => alert('Avvio chat con un operatore...')}>
             <MessageCircle className="text-slate-400 group-hover:text-indigo-600 mb-3" size={24} />
             <h3 className="font-bold text-slate-900 mb-1">Chat in tempo reale</h3>
             <p className="text-xs text-slate-500">Parla con un nostro operatore</p>
@@ -38,7 +38,7 @@ export function Support() {
         <Mail className="text-indigo-600 mx-auto mb-3" size={32} />
         <h2 className="text-lg font-bold text-slate-900 mb-2">Non hai trovato quello che cerchi?</h2>
         <p className="text-sm text-slate-600 mb-6">Inviaci un'email e ti risponderemo entro 24 ore.</p>
-        <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-full transition-colors shadow-md shadow-indigo-200">
+        <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-full transition-colors shadow-md shadow-indigo-200" onClick={() => window.location.href='mailto:supporto@orizon.app'}>
           Contattaci
         </button>
       </div>

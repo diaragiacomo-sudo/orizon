@@ -84,7 +84,7 @@ export function Groups() {
               <p className="text-xs font-semibold text-slate-500 mb-4">{group.privacy} &middot; {group.members} membri</p>
               
               <div className="mt-auto pt-4 border-t border-slate-100">
-                <button className="w-full bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-2 rounded-xl transition-colors text-sm">
+                <button className="w-full bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-2 rounded-xl transition-colors text-sm" onClick={() => alert('Entrato nel gruppo!')}>
                   Visita Gruppo
                 </button>
               </div>
